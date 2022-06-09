@@ -1,10 +1,18 @@
 pipeline {
     agent any
-
+    
+   
+    tools {
+        Maven
+        M2_HOME
+    }
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                mv build
+            }
+         stage('test') {
+                mv test
             }
         }
         stage('Build') {
